@@ -92,7 +92,7 @@ transition: background-color 0.3s ease, backdrop-filter 0.3s ease
 
 //* ===================== CARD GLOBAL
 .menu-card {
-  background: #EDF4C2;
+  background: #c19a6b;
   border: none;
   border-radius: 18px;
   overflow: hidden;
@@ -115,7 +115,7 @@ transition: background-color 0.3s ease, backdrop-filter 0.3s ease
    IMAGE FIX - FULL IMAGE NO CROP
 ===================== */
 .menu-card .ratio {
-  background: #ffffff; /* atau warna card kamu */
+  background: #c19a6b; /* atau warna card kamu */
 }
 
 .menu-card .card-img-top {
@@ -123,6 +123,19 @@ transition: background-color 0.3s ease, backdrop-filter 0.3s ease
   height: 100%;
   object-fit: contain;   /* 🔥 PENTING */
   object-position: center;
+}
+
+/* CARD UKURAN FIX */
+.bestSellerSwiper .menu-card {
+  width: 100%;
+  max-width: 280px; /* ukuran card desktop */
+}
+
+/* HP: full card */
+@media (max-width: 575.98px) {
+  .bestSellerSwiper .menu-card {
+    max-width: 100%;
+  }
 }
 
 /* =====================
@@ -136,7 +149,7 @@ transition: background-color 0.3s ease, backdrop-filter 0.3s ease
    TITLE
 ===================== */
 .menu-card .card-title {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 600;
   color: #1f1f1f;
   margin-bottom: 6px;
@@ -151,8 +164,8 @@ transition: background-color 0.3s ease, backdrop-filter 0.3s ease
    DESCRIPTION
 ===================== */
 .menu-card .card-text {
-  font-size: 13px;
-  color: #5f5f5f;
+  font-size: 15px;
+  color: #000000ff;
   line-height: 1.4;
 
   display: -webkit-box;
@@ -241,7 +254,8 @@ transition: background-color 0.3s ease, backdrop-filter 0.3s ease
    JAM OPERASIONAL
 ===================== */
 .jam-operasional li {
-  background: #c19a6b;
+  background-color: #c19a6b; 
+  border: 5px solid #e0dedbff; 
   padding: 12px 16px;
   border-radius: 14px;
   margin-bottom: 10px;
@@ -254,7 +268,7 @@ transition: background-color 0.3s ease, backdrop-filter 0.3s ease
 }
 
 .jam-operasional .jam {
-  font-size: 20px;
+  font-size: 14px;
   color: #000000ff;
   margin-top: 4px;
 }
@@ -317,7 +331,7 @@ transition: background-color 0.3s ease, backdrop-filter 0.3s ease
   flex: 0 0 100%;        /* HP: full width */
   max-width: 100%;
   scroll-snap-align: center;
-  background: #EDF4C2;
+  background: #c19a6b;
   border-radius: 18px;
   overflow: hidden;
   height: 100%;
@@ -342,8 +356,8 @@ transition: background-color 0.3s ease, backdrop-filter 0.3s ease
   flex-grow: 1;
 }
 
-.menu-card .card-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
-.menu-card .card-text { font-size: 13px; color: #5f5f5f; line-height: 1.4; overflow: hidden; }
+.menu-card .card-title { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+.menu-card .card-text { font-size: 13px; color: #2c2a2aff; line-height: 1.4; overflow: hidden; }
 .menu-card .price { font-size: 15px; font-weight: 700; color: #2e7d32; margin-top: auto; }
 
 /* Tablet: 2 card per view */
@@ -424,6 +438,83 @@ transition: background-color 0.3s ease, backdrop-filter 0.3s ease
   }
 }
 
+/* =======================
+   FOOTER
+======================= */
+.footer-section {
+  background: #b49670ff;
+  padding: 50px 0 25px;
+}
+
+.footer-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.footer-title {
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #2e7d32;
+}
+
+.footer-link,
+.footer-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link li,
+.footer-info li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.footer-link a,
+.footer-info a {
+  color: #555;
+  text-decoration: none;
+}
+
+.footer-link a:hover,
+.footer-info a:hover {
+  color: #2e7d32;
+  text-decoration: underline;
+}
+
+.footer-info i {
+  margin-right: 6px;
+  color: #2e7d32;
+}
+
+.footer-social a {
+  font-size: 20px;
+  margin-right: 12px;
+  color: #2e7d32;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.footer-social a:hover {
+  transform: translateY(-3px);
+  color: #1b5e20;
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+  .footer-section {
+    text-align: center;
+  }
+
+  .footer-brand {
+    justify-content: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}
 
 
 

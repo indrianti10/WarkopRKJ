@@ -23,3 +23,9 @@ fetch('navbar.html')
       navbar.classList.toggle('scrolled', window.scrollY > 50);
     });
   });
+
+  fetch("footer.html")
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("footer").innerHTML = html;
+  });

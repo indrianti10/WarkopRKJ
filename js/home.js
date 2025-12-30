@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", loadBestSeller);
 
+function formatRupiah(angka) {
+  return new Intl.NumberFormat("id-ID").format(Number(angka));
+}
+
 let bestSellerSwiper;
 
 async function loadBestSeller() {
@@ -46,7 +50,7 @@ async function loadBestSeller() {
           <h6 class="card-title mb-1">${item.nama}</h6>
           <p class="card-text text-clamp-2">${item.deskripsi}</p>
           <div class="price mt-auto fw-semibold">
-            Rp ${item.harga}
+            Rp ${formatRupiah(item.harga)}
           </div>
         </div>
       </div>
@@ -93,7 +97,7 @@ async function loadBestSeller() {
         card.dataset.deskripsi;
 
       document.getElementById("modalHarga").innerText =
-         "Rp " + card.dataset.harga;
+      "Rp " + formatRupiah(card.dataset.harga);
 
       document.getElementById("modalGambar").src =
         card.dataset.gambar;
@@ -198,7 +202,9 @@ async function loadMenuFavorit(kategori) {
       <div class="card-body">
         <h6 class="card-title">${item.nama}</h6>
         <p class="card-text">${item.deskripsi}</p>
-        <div class="price">Rp ${item.harga}</div>
+        <div class="price mt-auto fw-semibold">
+          Rp ${formatRupiah(item.harga)}
+        </div>
       </div>
     `;
     wrapper.appendChild(card);
