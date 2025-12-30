@@ -211,11 +211,6 @@ async function loadMenuFavorit(kategori) {
   });
 }
 
-// Update link See More sesuai kategori
-function updateSeeMoreLink(kategori) {
-  const seeMoreLink = document.getElementById("seeMoreLink");
-  seeMoreLink.href = `/menu/${kategori}`;
-}
 
 // Event kategori
 document.querySelectorAll("#menuKategoriNav .nav-link").forEach(btn => {
@@ -225,38 +220,11 @@ document.querySelectorAll("#menuKategoriNav .nav-link").forEach(btn => {
 
     const kategori = btn.dataset.kategori;
     loadMenuFavorit(kategori);
-    updateSeeMoreLink(kategori);
   });
 });
 
 // Inisialisasi default
 document.addEventListener("DOMContentLoaded", () => {
   loadMenuFavorit("makanan");
-  updateSeeMoreLink("makanan");
 });
 
-
-
-
-
-// ============================
-// NAV KATEGORI CLICK
-// ============================
-// document.querySelectorAll("#menuKategoriNav .nav-link")
-//   .forEach(btn => {
-//     btn.addEventListener("click", () => {
-//       document
-//         .querySelectorAll("#menuKategoriNav .nav-link")
-//         .forEach(b => b.classList.remove("active"));
-
-//       btn.classList.add("active");
-
-//       loadMenuFavorit(btn.dataset.kategori);
-//       updateSeeMoreLink(btn.dataset.kategori);
-//     });
-//   });
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   loadMenuFavorit("makanan");
-//   updateSeeMoreLink("makanan");
-// });
