@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Warkop Rindang Kebun Jati</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" href="img/Logo wrkj.png">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Swiper -->
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="navbar"></div>
+
+<!-- ================= HERO ================= -->
+<section class="position-relative vh-100 overflow-hidden">
+  <video autoplay muted loop playsinline
+    class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover">
+    <source src="img/video rkj.mp4" type="video/mp4">
+  </video>
+
+  <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+
+  <div class="container position-relative h-100">
+    <div class="row h-100 justify-content-center align-items-center text-center">
+      <div class="col-lg-8 text-white">
+        <h1 class="display-4 fw-bold">Warkop Rindang Kebun Jati</h1>
+        <p class="lead fst-italic fw-semibold">
+          "Ngopi santai di bawah sejuknya pohon jati"
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FASILITAS ================= -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold fs-1">Fasilitas Kami</h2>
+      <p class="text-muted">Kenyamanan pelanggan adalah prioritas kami</p>
+    </div>
+
+    <div class="row justify-content-center g-4">
+
+      <div class="col-4 col-md-4 col-lg-2 text-center fasilitas-item">
+        <div class="fasilitas-icon"><i class="bi bi-wifi"></i></div>
+        <h6>Free WiFi</h6>
+      </div>
+
+      <div class="col-4 col-md-4 col-lg-2 text-center fasilitas-item">
+        <div class="fasilitas-icon"><i class="bi bi-music-note-beamed"></i></div>
+        <h6>Live Musik</h6>
+      </div>
+
+      <div class="col-4 col-md-4 col-lg-2 text-center fasilitas-item">
+        <div class="fasilitas-icon"><i class="bi bi-house-door"></i></div>
+        <h6>Area Indoor</h6>
+      </div>
+
+      <div class="col-4 col-md-4 col-lg-2 text-center fasilitas-item">
+        <div class="fasilitas-icon"><i class="bi bi-tree"></i></div>
+        <h6>Area Outdoor</h6>
+      </div>
+
+      <div class="col-4 col-md-4 col-lg-2 text-center fasilitas-item">
+        <div class="fasilitas-icon"><i class="bi bi-moon-stars"></i></div>
+        <h6>Mushola</h6>
+      </div>
+
+      <div class="col-4 col-md-4 col-lg-2 text-center fasilitas-item">
+        <div class="fasilitas-icon"><i class="bi bi-gender-ambiguous"></i></div>
+        <h6>Toilet</h6>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= BEST SELLER ================= -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">🔥 Menu Best Seller</h2>
+
+    <div class="swiper bestSellerSwiper">
+      <div class="swiper-wrapper" id="bestSellerWrapper">
+        <!-- CARD dari JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MODAL PRODUK ================= -->
+<div class="modal fade" id="produkModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content border-0 rounded-4">
+
+      <!-- HEADER -->
+      <div class="modal-header border-0 justify-content-center pb-0">
+        <h5 class="modal-title fw-semibold text-center" id="modalNama"></h5>
+        <button type="button"
+                class="btn-close position-absolute end-0 me-3"
+                data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- BODY -->
+      <div class="modal-body text-center pt-3">
+
+        <img id="modalGambar" class="modal-produk-img mb-3">
+
+        <p id="modalDeskripsi"
+           class="small text-muted px-3 mb-3">
+        </p>
+
+        <div id="modalHarga"
+             class="fw-bold fs-5 text-success">
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- ================= END MODAL PRODUK ================= -->
+
+<!-- ================= JAM OPERASIONAL & LOKASI ================= -->
+<section class="py-5 bg-light">
+  <h2 class="fw-bold text-center mb-4">
+  📍 Jam Operasional & Lokasi
+  </h2>
+  <div class="container">
+    <div class="row align-items-center g-4">
+
+      <!-- KIRI : JAM BUKA -->
+      <div class="col-12 col-md-6">
+        <ul class="list-unstyled jam-operasional" id="jamOperasional">
+          <!-- Diisi dari JS -->
+        </ul>
+      </div>
+
+      <!-- KANAN : MAP -->
+      <div class="col-12 col-md-6">
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps?q=Warkop%20Rindang%20Kebun%20Jati&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ================= END JAM OPERASIONAL & LOKASI ================= -->
+
+<section class="py-5 bg-light">
+  <h2 class="fw-bold text-center mb-4">OUR MENU FAVORITE</h2>
+  <div class="container">
+    <!-- NAV KATEGORI -->
+    <ul class="nav justify-content-center mb-4" id="menuKategoriNav">
+      <li class="nav-item">
+        <button class="nav-link active" data-kategori="makanan">Makanan</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-kategori="minuman">Minuman</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-kategori="cemilan">Cemilan</button>
+      </li>
+    </ul>
+    <div class="d-flex justify-content-end mb-2">
+      <a href="/menu/makanan" id="seeMoreLink" class="see-more-link">See More</a>
+    </div>
+    <!-- CARD GRID -->
+    <div id="menuFavoritWrapper" class="menu-wrapper">
+      <!-- Card akan diinject oleh JS -->
+    </div>
+  </div>
+</section>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/6281234567890?text=Halo%20Warkop,%20saya%20ingin%20reservasi%20meja" 
+   target="_blank" 
+   class="whatsapp-float">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+
+
+
+<!-- ================= JS ================= -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase.js"></script>
+<script src="js/home.js"></script>
+<script src="js/navbar.js"></script>
+
+</body>
+</html>
