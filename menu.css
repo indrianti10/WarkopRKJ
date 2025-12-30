@@ -10,17 +10,50 @@ body {
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
+    background: #c19a6b; /* warna card sama semua */
+    color: #1f1f1f;            /* teks default */
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 24px rgba(0,0,0,.1);
+    cursor: pointer;
+
+    /* Kunci tinggi sama untuk semua card */
+    min-height: 320px;
+    max-height: 400px;     /* batas maksimal */
 }
 
 /* Favorite star */
 .favorite-star {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: gold;
-    font-size: 1.5rem;
-    z-index: 10;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+
+  /* ukuran bulat tetap */
+  width: 30px;
+  height: 30px;
+
+  /* background hitam */
+  background-color: gold;
+
+  /* bentuk bulat */
+  border-radius: 50%;
+
+  /* center bintang */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* warna bintang */
+  color: black;
+  font-size: 30px;
+
+  /* opsional: border tipis agar lebih rapi */
+  border: 1px solid #fdf7f7ff;
 }
+
 
 /* Card image: tampil penuh tanpa terpotong */
 .card-img-top {
@@ -28,13 +61,17 @@ body {
     height: auto; /* biar proporsional, tidak crop */
     max-height: 200px; /* optional: agar card tidak terlalu panjang */
     object-fit: contain; 
+    background-color: #c19a6b;
 }
+
+
 
 /* Card body */
 .card-body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: #c19a6b;
 }
 
 /* Batasi deskripsi card */
