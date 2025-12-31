@@ -1,10 +1,17 @@
 const kategoriHalaman = document.body.dataset.category || 'makanan';
+
+// Subkategori minuman & mapping ke containerId HTML
 const subkategoriMinuman = ['coffee', 'non coffee', 'tea'];
+const subkategoriMap = {
+    'coffee': 'coffee-container',
+    'non coffee': 'noncoffee-container',
+    'tea': 'teh-container' // mapping 'tea' ke HTML id 'teh-container'
+};
 
 // Ambil data dari Supabase
 async function fetchData(category, subcategory = null) {
     let query = supabaseClient.from('produk').select('*').eq('kategori', category);
-    if (subcategory) query = query.eq('sub_kategori', subcategory);
+    if (subcategory) query = query.ilike('sub_kategori', subcategory); // case-insensitive
     const { data, error } = await query;
     if (error) {
         console.error('Supabase fetch error:', error);
@@ -62,7 +69,7 @@ async function renderKategoriTanpaSub(category, containerId) {
 // Render minuman per subkategori
 async function renderMinumanSections() {
     for (let sub of subkategoriMinuman) {
-        const containerId = sub.replace(' ', '').toLowerCase() + '-container';
+        const containerId = subkategoriMap[sub];
         const container = document.getElementById(containerId);
         if (!container) continue;
 
@@ -79,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'makanan':
         case 'mie':
         case 'cemilan':
-            // render semua section di halaman yang sama
             renderKategoriTanpaSub('makanan', 'makanan-container');
             renderKategoriTanpaSub('mie', 'mie-container');
             renderKategoriTanpaSub('cemilan', 'cemilan-container');
